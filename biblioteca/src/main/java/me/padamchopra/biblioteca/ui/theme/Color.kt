@@ -1,8 +1,16 @@
 package me.padamchopra.biblioteca.ui.theme
 
+import androidx.compose.material.Colors
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+val blue = Color(0xFF4d6aff)
+val pink = Color(0xFFff7094)
+val green = Color(0xFF06d6a0)
+val darkGrey = Color(0xFF1E1E1E)
+val white = Color(0xFFFFFFFF)
+val black = Color(0xFF000000)
+
+val Colors.appBarContent: Color
+    @Composable
+    get() = if (isLight) onPrimary else onSurface

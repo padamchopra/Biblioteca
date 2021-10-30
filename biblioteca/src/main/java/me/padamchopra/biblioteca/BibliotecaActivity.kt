@@ -3,16 +3,22 @@ package me.padamchopra.biblioteca
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import me.padamchopra.biblioteca.navigation.BibliotecaApp
+import androidx.activity.viewModels
+import me.padamchopra.biblioteca.ui.BibliotecaApp
 import me.padamchopra.biblioteca.ui.theme.BibliotecaTheme
+import me.padamchopra.biblioteca.ui.viewmodel.BibliotecaViewModule
 
-class MainActivity : ComponentActivity() {
+class BibliotecaActivity : ComponentActivity() {
+
+    private val viewModel: BibliotecaViewModule by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             BibliotecaTheme {
-                // A surface container using the 'background' color from the theme
-                BibliotecaApp()
+                BibliotecaApp(
+                    viewModel = viewModel
+                )
             }
         }
     }
