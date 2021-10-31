@@ -13,18 +13,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import me.padamchopra.biblioteca.BibliotecaActivity
+import me.padamchopra.biblioteca.BibliotecaPayload
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val bundle: BibliotecaPayload = BibliotecaPayload.Builder().build()
+
         setContent {
-            MainActivityContent()
+            MainActivityContent(bundle)
         }
     }
 }
 
 @Composable
-private fun MainActivityContent() {
+private fun MainActivityContent(bundle: BibliotecaPayload) {
 
     val context = LocalContext.current
 
@@ -33,7 +37,9 @@ private fun MainActivityContent() {
         contentAlignment = Alignment.Center
     ) {
         Button(onClick = {
-            context.startActivity(Intent(context, BibliotecaActivity::class.java))
+            val intent = Intent(context, BibliotecaActivity::class.java)
+            intent.putExtra(BibliotecaPayload.EXTRA_KEY, bundle)
+            context.startActivity(intent)
         }) {
             Text(text = "Open Biblioteca")
         }

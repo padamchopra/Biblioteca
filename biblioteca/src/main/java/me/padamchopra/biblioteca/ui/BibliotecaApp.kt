@@ -6,12 +6,13 @@ import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import me.padamchopra.biblioteca.ui.components.BibliotecaContentScreen
 import me.padamchopra.biblioteca.ui.components.BibliotecaTopAppBar
-import me.padamchopra.biblioteca.ui.viewmodel.BibliotecaViewModule
+import me.padamchopra.biblioteca.ui.viewmodel.BibliotecaViewModel
 
 @Composable
 internal fun BibliotecaApp(
-    viewModel: BibliotecaViewModule
+    viewModel: BibliotecaViewModel
 ) {
 
     val activeTab by viewModel.activeTab.collectAsState()
@@ -29,6 +30,11 @@ internal fun BibliotecaApp(
                 )
             }
         },
-        content = {}
+        content = {
+            BibliotecaContentScreen(
+                activeTab = activeTab,
+                viewModel = viewModel
+            )
+        }
     )
 }

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Biblioteca</string>
+    <string name="bib_edit_desc">Edit</string>
+    <string name="bib_dismiss_desc">Dismiss</string>
+
+    <string name="bib_missing_theme_presets_reminder">You can provide colors and typography for your theme by building \'ProvidedColors\' and \`ProvidedTypography\`.</string>
+    <string name="bib_missing_colors_reminder">You can provide colors for your theme by building \'ProvidedColors\' and adding it to payload builder via \'setProvidedColors\'.</string>
+    <string name="bib_missing_typography_reminder">You can provide typography for your theme by building \'ProvidedTypography\' and adding it to payload builder via \'setProvidedTypography\'.</string>
 </resources>

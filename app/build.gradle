@@ -11,7 +11,7 @@ android {
         minSdk 23
         targetSdk 31
         versionCode 1
-        versionName "0.0.3"
+        versionName "0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -63,5 +63,6 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 
-    implementation project(':biblioteca')
+    implementation project(":biblioteca")
+    //implementation 'com.github.padamchopra:Biblioteca:v0.0.3'
 }
